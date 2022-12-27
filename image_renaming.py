@@ -3,7 +3,7 @@ import datetime
 import shutil
 from PIL import Image
 
-folder = 'C:/Users/valfr.VAL/Pictures/Fotos'
+folder = 'C:/Users/valfr.VAL/Pictures/Prueba2/2022'
 
 photo_id = 0
 
