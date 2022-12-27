@@ -6,7 +6,7 @@ import itertools
 
 photo_number = 1
 
-folder = 'C:/Users/valfr.VAL/Pictures/Fotos/2015'
+folder = 'C:/Users/valfr.VAL/Pictures/Fotos/2022'
 
 if not os.path.isdir(folder+'/duplicates'):
     os.makedirs(folder+'/duplicates')
@@ -65,7 +65,7 @@ for i in range(total):
         entry2 = entries[j]
 
         print(
-            f"archivos: {entry} y {entry2} ============ {total_counter}/{total*total} \n")
+            f"archivos: {entry} y {entry2} ============ {total_counter}/{total**2} \n")
         total_counter += 1
 
         if i == j:
