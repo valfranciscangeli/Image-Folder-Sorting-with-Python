@@ -3,9 +3,9 @@ import datetime
 import shutil
 from PIL import Image
 
-folder = 'C:/Users/valfr.VAL/Pictures/Prueba2/2022'
+folder = 'D:/Fotos/bien'
 
-photo_id = 0
+photo_id = 1
 
 if not os.path.isdir(folder+'/no_analyzable/'):
     os.makedirs(folder+'/no_analyzable/')
@@ -40,8 +40,6 @@ for element in no_analizables:
     shutil.move(original, target)
 
 
-print("imagenes encontradas", entries)
-
 
 def funcion2(x):
     ext = ''
@@ -53,10 +51,10 @@ def funcion2(x):
             break
     return ext[::-1]
 
-
+total_ph=len(entries)
 for entry in entries:
     path = folder+'/' + entry
-    print('path:', path)
+    print(f'path: {path} ======== {photo_id*100/total_ph}%')
 
     def f(x):
         return str(x) if x > 9 else "0"+str(x)
@@ -126,6 +124,10 @@ for entry in entries:
 
     old_name = path
     new_name = folder+'/' + name+funcion2(entry)
-    os.rename(old_name, new_name)
+    if not os.path.isfile(new_name):
+        os.rename(old_name, new_name)
+    else:    
+        new_name = folder+'/' + name+f'_({photo_id+1})'+funcion2(entry)
+        os.rename(old_name, new_name)
 
     photo_id += 1

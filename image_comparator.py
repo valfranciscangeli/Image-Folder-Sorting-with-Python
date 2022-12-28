@@ -6,7 +6,7 @@ import itertools
 
 photo_number = 1
 
-folder = 'C:/Users/valfr.VAL/Pictures/Fotos/2022'
+folder = 'D:/Fotos/bien/2017'
 
 if not os.path.isdir(folder+'/duplicates'):
     os.makedirs(folder+'/duplicates')
@@ -47,11 +47,7 @@ print("imagenes encontradas", entries)
 print('largo:', len(entries))
 print()
 
-""" combinations = list(itertools.combinations(entries, 2))
-print(combinations)
-print("largo:", len(c))
 
-total = len(c) """
 total = len(entries)
 total_counter = 1
 
@@ -65,7 +61,7 @@ for i in range(total):
         entry2 = entries[j]
 
         print(
-            f"archivos: {entry} y {entry2} ============ {total_counter}/{total**2} \n")
+            f"archivos: {entry} y {entry2} ============ {total_counter*100/(total**2)}% \n")
         total_counter += 1
 
         if i == j:

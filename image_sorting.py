@@ -3,7 +3,7 @@ import os
 import shutil
 import datetime
 
-folder = 'C:/Users/valfr.VAL/Pictures/Fotos'
+folder = 'D:/Fotos/bien/2017'
 
 
 if not os.path.isdir(folder+'/no_sortable/'):
@@ -39,10 +39,12 @@ for element in no_sortable:
     target = folder + '/no_sortable/' + element
     shutil.move(original, target)
 
-
+total = len(entries)
+contador = 1
 for entry in entries:
     path = folder+'/' + entry
-    print('path:', path)
+    print(f'path: {path} ======== {contador*100/total}%')
+    contador +=1
 
     def f(x):
         return str(x) if x > 9 else "0"+str(x)
